@@ -43,8 +43,8 @@ class Camera_Calibration_API:
                  pattern_type,
                  pattern_rows,
                  pattern_columns,
-                 distance_in_world_units=1.0,
-                 figsize=(8, 8),
+                 distance_in_world_units=1.0, #default
+                 figsize=(8, 8), #plot image size
                  debug_dir=None,
                  term_criteria=(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_COUNT, 30, 0.001)
                  ):
@@ -147,6 +147,9 @@ class Camera_Calibration_API:
 
     def _calc_reprojection_error(self, figure_size=(8, 8), save_dir=None):
         """
+        :arg
+        :return
+
         Util function to Plot reprojection error
         """
         reprojection_error = []
